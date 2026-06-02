@@ -1,5 +1,2 @@
-entregables/rendered/
-entregables/rendered_word/
-*.tmp.docx
 node_modules/
 .env

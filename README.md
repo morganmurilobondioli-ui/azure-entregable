@@ -1,8 +1,6 @@
 # InnovVentas: e-commerce con chatbot
 
-Proyecto Node.js del caso practico **Uso de chatbots en E-commerce** del curso AI-900T00 Conceptos Basicos de IA en Microsoft Azure.
-
-La app incluye una tienda demo de productos tecnologicos y un chatbot funcional que responde consultas frecuentes sobre disponibilidad, especificaciones, pagos, envios, garantia, seguimiento de pedidos, soporte tecnico y recomendaciones de compra.
+Proyecto Node.js del caso practico **Uso de chatbots en E-commerce**. La app incluye una tienda demo de productos tecnologicos y un chatbot funcional que responde consultas frecuentes sobre disponibilidad, especificaciones, pagos, envios, garantia, seguimiento de pedidos, soporte tecnico y recomendaciones de compra.
 
 ## App web
 
@@ -12,7 +10,14 @@ La app incluye una tienda demo de productos tecnologicos y un chatbot funcional 
 - Metricas demo: endpoint `/api/metrics` para conversaciones, mensajes, recomendaciones y escalamientos.
 - Hosting recomendado: Render como Web Service.
 
-## Ejecutar localmente
+## Estructura
+
+- `server.js`: servidor Express y API del chatbot.
+- `public/`: interfaz web, estilos, JavaScript e imagenes usadas por la tienda.
+- `package.json`: dependencias y scripts de ejecucion.
+- `render.yaml`: configuracion opcional para desplegar como Blueprint en Render.
+
+## Ejecutar Localmente
 
 Requisitos:
 
@@ -59,39 +64,15 @@ Notas:
 - Render recomienda que el servidor use la variable `PORT`; si no se configura, Render espera el puerto `10000`. Este proyecto ya usa `process.env.PORT || 3000` y escucha en `0.0.0.0`.
 - Si haces cambios, subelos a GitHub y Render puede desplegarlos nuevamente desde el repositorio conectado.
 
-## Entregables
-
-- `entregables/PIAD-627_TRABAJO_FINAL_INNOVVENTAS.docx`: documento final en formato de alumno.
-- `entregables/PIAD-627_TRABAJO_FINAL_INNOVVENTAS.pdf`: version PDF exportada desde Word.
-- `docs/propuesta_innovventas.md`: version Markdown de la propuesta, con diagramas Mermaid.
-- `assets/`: diagramas PNG usados en el documento.
-- `public/`: interfaz web de la tienda y el chatbot.
-- `server.js`: servidor Express y API del chatbot.
-- `render.yaml`: configuracion opcional para desplegar como Blueprint en Render.
-
 ## Contenido
 
-La propuesta desarrolla una solucion de chatbot para InnovVentas que cubre:
+La app desarrolla una solucion de chatbot para InnovVentas que cubre:
 
 - necesidades del cliente y problemas del flujo e-commerce;
 - preguntas frecuentes del cliente;
-- seleccion tecnica de Microsoft Copilot Studio, Azure AI Bot Service, Web Chat, Direct Line y Application Insights;
-- flujo conversacional y arquitectura Azure;
-- plan de implementacion, recursos, metricas, riesgos y criterios de evaluacion.
-
-## Reproducir el documento
-
-Ejecutar el generador desde la raiz del repositorio:
-
-```powershell
-& 'C:\Users\morga\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\build_entregable.py
-```
-
-El script usa la plantilla descargada en:
-
-```text
-C:\Users\morga\Downloads\PIAD-627_FORMATOALUMNOTRABAJOFINAL.docx
-```
+- asistencia de compra y recomendaciones;
+- metricas basicas para evaluar interaccion, mensajes, recomendaciones y escalamientos;
+- despliegue sencillo en Render.
 
 ## Fuentes tecnicas
 
