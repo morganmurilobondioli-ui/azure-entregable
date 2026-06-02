@@ -1,0 +1,490 @@
+:root {
+  --ink: #172033;
+  --muted: #64748b;
+  --line: #dbe3ef;
+  --blue: #1769e0;
+  --green: #138a66;
+  --yellow: #ffd166;
+  --pink: #ef6f88;
+  --surface: #ffffff;
+  --page: #f7f9fc;
+  --shadow: 0 18px 45px rgba(23, 32, 51, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--page);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px clamp(18px, 4vw, 56px);
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: white;
+  background: var(--blue);
+  border-radius: 8px;
+  letter-spacing: 0;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(12px, 3vw, 28px);
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.hero {
+  display: grid;
+  min-height: calc(100vh - 70px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 70px);
+  padding: clamp(36px, 7vw, 84px) clamp(18px, 5vw, 72px);
+  background:
+    linear-gradient(110deg, rgba(23, 105, 224, 0.08), rgba(19, 138, 102, 0.09)),
+    url("/images/store-hero.png") center / cover;
+}
+
+.hero-copy {
+  max-width: 700px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  line-height: 1;
+}
+
+h2 {
+  font-size: clamp(1.65rem, 3vw, 2.3rem);
+}
+
+.hero-text {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: #334155;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.button.primary {
+  color: white;
+  background: var(--blue);
+}
+
+.button.secondary {
+  color: var(--ink);
+  background: white;
+  border-color: var(--line);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: min(480px, 100%);
+  filter: drop-shadow(0 28px 32px rgba(23, 32, 51, 0.2));
+}
+
+.section {
+  padding: 54px clamp(18px, 5vw, 72px);
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  display: grid;
+  min-height: 100%;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.06);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1.3;
+  object-fit: contain;
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.product-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.stock {
+  color: var(--green);
+  font-size: 0.84rem;
+}
+
+.add-button {
+  min-height: 38px;
+  color: white;
+  background: var(--ink);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.metrics-band {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding: 42px clamp(18px, 5vw, 72px);
+  background: #102033;
+  color: white;
+}
+
+.metrics-band .eyebrow {
+  color: var(--yellow);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metric {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 1.8rem;
+}
+
+.metric span {
+  color: #dbeafe;
+  font-size: 0.88rem;
+}
+
+.chat-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  display: grid;
+  width: min(390px, calc(100vw - 32px));
+  height: min(620px, calc(100vh - 100px));
+  grid-template-rows: auto 1fr auto auto;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.chat-panel.is-hidden {
+  display: none;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  color: white;
+  background: var(--blue);
+}
+
+.chat-header div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #7cf6ba;
+  border-radius: 50%;
+}
+
+.icon-button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.16);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 14px;
+  background: #f8fafc;
+}
+
+.message {
+  max-width: 84%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  line-height: 1.45;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.message.user {
+  align-self: flex-end;
+  color: white;
+  background: var(--green);
+}
+
+.chat-products {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.chat-product {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 10px;
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.chat-product img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.chat-product strong,
+.chat-product span {
+  display: block;
+}
+
+.chat-product span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.quick-replies {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+}
+
+.quick-replies button {
+  white-space: nowrap;
+  padding: 7px 10px;
+  color: var(--ink);
+  background: #edf4ff;
+  border: 1px solid #c7dcff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chat-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.chat-form input {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.chat-form button {
+  min-width: 74px;
+  color: white;
+  background: var(--blue);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.chat-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 29;
+  display: none;
+  min-height: 48px;
+  padding: 0 18px;
+  color: white;
+  background: var(--blue);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.chat-fab.is-visible {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .metrics-band {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid,
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .product-grid,
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-panel {
+    right: 10px;
+    bottom: 10px;
+    width: calc(100vw - 20px);
+    height: min(640px, calc(100vh - 80px));
+  }
+}

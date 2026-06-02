@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InnovVentas | Chatbot e-commerce</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="InnovVentas">
+        <span class="brand-mark">IV</span>
+        <span>InnovVentas</span>
+      </a>
+      <nav class="nav" aria-label="Navegacion principal">
+        <a href="#productos">Productos</a>
+        <a href="#metricas">Metricas</a>
+        <a href="#chat">Chatbot</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">E-commerce tecnologico</p>
+          <h1>Compra tecnologia con asistencia inmediata</h1>
+          <p class="hero-text">
+            Explora productos, resuelve dudas de pago, envio, stock y soporte tecnico con un chatbot preparado para reducir carritos abandonados.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#productos">Ver productos</a>
+            <button class="button secondary" id="open-chat" type="button">Abrir chatbot</button>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="/images/laptop-pro-14.png" alt="" />
+        </div>
+      </section>
+
+      <section class="section" id="productos">
+        <div class="section-heading">
+          <p class="eyebrow">Catalogo demo</p>
+          <h2>Productos destacados</h2>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <section class="metrics-band" id="metricas">
+        <div>
+          <p class="eyebrow">Seguimiento</p>
+          <h2>Metricas del chatbot</h2>
+        </div>
+        <div class="metrics-grid" id="metrics-grid">
+          <div class="metric"><strong>0</strong><span>Conversaciones</span></div>
+          <div class="metric"><strong>0</strong><span>Mensajes</span></div>
+          <div class="metric"><strong>0</strong><span>Recomendaciones</span></div>
+          <div class="metric"><strong>0</strong><span>Escalamientos</span></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="chat-panel" id="chat" aria-label="Chatbot de InnovVentas">
+      <div class="chat-header">
+        <div>
+          <span class="status-dot"></span>
+          <strong>Asistente InnovVentas</strong>
+        </div>
+        <button class="icon-button" id="minimize-chat" type="button" aria-label="Minimizar chat">×</button>
+      </div>
+      <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+      <div class="quick-replies" id="quick-replies"></div>
+      <form class="chat-form" id="chat-form">
+        <input id="chat-input" name="message" type="text" autocomplete="off" placeholder="Pregunta por stock, pagos o garantia..." />
+        <button type="submit">Enviar</button>
+      </form>
+    </aside>
+
+    <button class="chat-fab" id="chat-fab" type="button" aria-label="Abrir chatbot">Chat</button>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

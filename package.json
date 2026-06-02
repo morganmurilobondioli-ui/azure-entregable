@@ -1,0 +1,22 @@
+{
+  "name": "innovventas-chatbot",
+  "version": "1.0.0",
+  "description": "Demo Node.js de e-commerce con chatbot para InnovVentas.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "chatbot",
+    "ecommerce",
+    "render"
+  ],
+  "author": "Morgan Murilo Bondioli",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
